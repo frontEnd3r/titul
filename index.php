@@ -557,5 +557,30 @@ get_header();
             </div>
         </div>
     </section>
+    <div class="wrapper-modal" id="wrapper-modal">
+        <div class="overlay" id="overlay"></div>
+        <div class="modal-window-text" id="modal-window-text">
+          <div class="modal-txt">
+              <h4 class="modal__title">Заявка на консультацию с экспертом</h4>
+              <p class="modal__about">Напишите контакты, чтобы эксперт помог вам разместить объект или подобрать недвижимость.</p>
+          </div>
+          <div class="modal-form">
+              <div class="consultant_time">
+                  <img class="consultant_modal__img" src="./img/online-consultant.png" alt="consultant">
+                  <p class="consultant__txt">Эксперты перезвонят в течении 15 минут.</p>
+              </div>
+              <div class="modal-form__item">
+                  <h5 class="form-quest">Как к вам обращаться?</h5>
+                  <input class="form_modal__input" type="text" placeholder="Виталий">
+                  <h5 class="form-quest">Куда звонить?</h5>
+                  <input class="form_modal__input" type="tel" placeholder="89005553535"> 
+                  <button type="button" class="section-help_search__btn modal__btn">Найти</button> 
+                  <button type="button" class="offer_btn__whatsapp btn-main modal__btn modal_btn_whats">
+                    Написать <span class="offer_btn__span"> в WhatsApp</span>
+                </button>
+              </div>
+          </div>
+        </div>        
+      </div> 
 <?php
 get_footer();
