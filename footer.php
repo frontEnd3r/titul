@@ -70,12 +70,13 @@
             </div>
 
             <div class="taxi">
+            <img class="taxi-img-mob" src="<?php echo get_template_directory_uri()?>/assets/img/taxi-mob.png" alt="">
                 <img class="taxi-img" src="<?php echo get_template_directory_uri()?>/assets/img/footer-car.png" alt="taxi">
                 <div class="taxi-txt">
                     <h5 class="footer-taxi_title">
                         Вызовите такси <span class="footer-taxi_title">до офиса</span>
                     </h5>
-                    <button type="button" class="quality-expert_text__btn taxi-txt_btn">Заказать звонок</button>
+                    <button id="taxi-txt_btn" type="button" class="quality-expert_text__btn taxi-txt_btn">Заказать звонок</button>
                     <p class="taxi-text_pay">За наш счёт*</p>
                 </div>
             </div>

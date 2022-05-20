@@ -12,7 +12,7 @@ get_header();
                 </p>
                 <div class="section-help_title__btn-consultant">
                     <button type="button"
-                            class="section-help_title_btn offer_btn__order-call btn-main">Проконсультироваться с
+                            class="section-help_title_btn offer_btn__order-call btn-main" id="section-help_title_btn">Проконсультироваться с
                         экспертом
                     </button>
                     <div class="section-help_title__consultant">
@@ -58,7 +58,7 @@ get_header();
                     <div class="category-img_places category-all">
                         <img class="category-img_places-img"
                              src="<?php echo get_template_directory_uri() ?>/assets/img/places.png" alt="places">
-                        <p class="category-img_places-text categoty-text">Промышленные площадки</p>
+                        <p class="category-img_places-text categoty-text places-padding">Промышленные площадки</p>
                     </div>
                 </a>
                 <a href="#" class="category-img">
@@ -87,7 +87,7 @@ get_header();
                     <div class="category-img_warehouse category-all">
                         <img class="category-img_warehouse-img"
                              src="<?php echo get_template_directory_uri() ?>/assets/img/office.png" alt="warehouse">
-                        <p class="category-img_warehouse-text categoty-text category-margin">Торгово-офисные помещения
+                        <p class="category-img_warehouse-text categoty-text category-margin warehous-padding">Торгово-офисные помещения
                         </p>
                     </div>
                 </a>
@@ -122,47 +122,90 @@ get_header();
             <h2 class="proposal_title">Специальные предложения</h2>
             <div class="proposal-wrapper">
                 <div class="poposal-wrapper_slider">
-                    <button type="button" id="btn-prev" class="poposal-wrapper_slider__prev slider-arrow">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
-                    </button>
-                    <img class="poposal-wrapper_slider__slide"
-                         src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
-                    <div class="poposal-wrapper_slider__slides">
-						<?php $counter = 1;
-						$slides        = carbon_get_post_meta( 26, 'slider-slides' );
-						foreach ( $slides as $slide ) { ?>
-                            <span class="poposal-wrapper_slider__area <?php if ( $counter === 1 ) {
-								echo 'active';
-							} ?>">
-                            <span class="poposal-wrapper_slider__area-title"><?php echo $slide['object-name']; ?></span>
-                            <span class="poposal-wrapper_slider__area-txt"><?php echo $slide['object-main-title']; ?></span>
-                            <p class="poposal-wrapper_slider__area-about"><?php echo $slide['object-main-subtitle']; ?></p>
-                            <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
-                        </span>
-							<?php $counter ++;
-						} ?>
-
-
-                    </div>
-
-
-                    <button type="button" id="btn-next" class="poposal-wrapper_slider__next slider-arrow">
+                    
+                    <div class="swiper mySwiper poposal-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            <span class="poposal-wrapper_slider__area active">
+                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
+                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
+                                <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
+                                    небольшого предприятия.</p>
+                                <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                            </span>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
+                                <span class="poposal-wrapper_slider__area active">
+                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
+                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
+                                        небольшого предприятия.</p>
+                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                                </span>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
+                                <span class="poposal-wrapper_slider__area active">
+                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
+                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
+                                        небольшого предприятия.</p>
+                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                                </span>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
+                                <span class="poposal-wrapper_slider__area active">
+                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
+                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
+                                        небольшого предприятия.</p>
+                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                                </span>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
+                                <span class="poposal-wrapper_slider__area active">
+                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
+                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
+                                        небольшого предприятия.</p>
+                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                                </span>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
+                                <span class="poposal-wrapper_slider__area active">
+                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
+                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
+                                        небольшого предприятия.</p>
+                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next">
+                        <button type="button" id="btn-next" class="poposal-wrapper_slider__next slider-arrow">
                         <svg width="12" height="25" viewBox="0 0 12 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 24L10 12.5L1 0.999998" stroke="white" stroke-width="2"/>
                         </svg>
                     </button>
+                        </div>
+                        <div class="swiper-button-prev">
+                        <button type="button" id="btn-prev" class="poposal-wrapper_slider__prev slider-arrow">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
+                    </button>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+
+                    
 
 
                 </div>
-                <div class="dots-for-slider">
-					<?php $counter = 1;
-					foreach ( $slides as $slide ) { ?>
-                        <button type="button" class="dots-for-slider_dot <?php if ( $counter === 1 ) {
-							echo 'active';
-						} ?>"></button>
-						<?php $counter ++;
-					} ?>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -190,7 +233,7 @@ get_header();
                             словесных перепалок.
                             Мы всегда находимся на стороне нашего клиента, поэтому поможем урегулировать спор.
                         </div>
-                        <img class="quality-items_wrapper__img"
+                        <img class="quality-items_wrapper__img img_width"
                              src="<?php echo get_template_directory_uri() ?>/assets/img/difficulties.png" alt="man-run">
                     </div>
                     <div class="quality-items_wrapper quality-items_wrapper__margin quality-items_wrapper__paper">
@@ -234,13 +277,14 @@ get_header();
                 </div>
             </div>
             <div class="quality-expert">
+                <img class="quality-expert_img__mob" src="<?php echo get_template_directory_uri() ?>/assets/img/expert-mob.png" alt="expert">
                 <img class="quality-expert_img" src="<?php echo get_template_directory_uri() ?>/assets/img/expert.png"
                      alt="expert">
                 <div class="quality-expert_text">
                     <div class="quality-expert_text__title">Задайте вопрос эксперту</div>
                     <p class="quality-expert_text__txt">Эксперт ответит на ваши вопросы и поможет с продажей и
                         поиском коммерческой недвижимости.</p>
-                    <button type="button" class="quality-expert_text__btn">Заказать звонок</button>
+                    <button id="quality-expert_text__btn"  type="button" class="quality-expert_text__btn">Заказать звонок</button>
                 </div>
             </div>
         </div>
@@ -250,6 +294,7 @@ get_header();
     <section class="feedback" id="feedback">
         <div class="container">
             <h2 class="feedback_title">Отзывы скажут больше</h2>
+            <h2 class="feedback_title_mob">Отзывы</h2>
             <div class="swiper mySwiper feedback-mySwiper feedback-swiper">
                 <div class="swiper-wrapper feedback-wrapper-swiper">
                     <div class="swiper-slide swiper-slide-feedback">
@@ -391,6 +436,7 @@ get_header();
     <section class="journal" id="journal">
         <div class="container">
             <div class="call">
+            <img class="call_img-sm" src="<?php echo get_template_directory_uri() ?>/assets/img/call-sm.png" alt="call">
                 <img class="call_img" src="<?php echo get_template_directory_uri() ?>/assets/img/call(2).png"
                      alt="expert">
                 <div class="call_text">
@@ -566,7 +612,7 @@ get_header();
           </div>
           <div class="modal-form">
               <div class="consultant_time">
-                  <img class="consultant_modal__img" src="./img/online-consultant.png" alt="consultant">
+                  <img class="consultant_modal__img" src="<?php echo get_template_directory_uri() ?>/assets/img/online-consultant.png" alt="consultant">
                   <p class="consultant__txt">Эксперты перезвонят в течении 15 минут.</p>
               </div>
               <div class="modal-form__item">

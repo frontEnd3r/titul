@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -175,12 +174,16 @@ option:focus {
 .swiper-button-next:after, 
 .swiper-rtl .swiper-button-prev:after {
     content: '';
+    display: none;
 }
 
 .swiper-button-prev:after, 
 .swiper-rtl .swiper-button-next:after {
     content: '';
+    display: none;
 }
+
+
 
 
 /*          HEADER          */
@@ -445,7 +448,7 @@ option:focus {
     height: 731px;
     position: absolute;
     top: 51px;
-    right: 0;
+    right: 10%;
     z-index: 0;
 }
 
@@ -455,7 +458,7 @@ option:focus {
     height: 100px;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 10%;
     width: 448px;
     z-index: 1;
     background: linear-gradient(360deg, #F6F8FC 15.18%, rgba(251, 253, 255, 0) 82.81%);
@@ -547,7 +550,7 @@ option:focus {
 .section-help_search__form {
     display: flex;
     align-items: center;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .input-dropdown {
@@ -1500,17 +1503,6 @@ svg {
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.card-items-thumb {
-
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.card-items-thumb img {
-    object-fit: cover;
-    width: 330px;
-    height: 180px;
-}
 
 .card-items:not(:last-child) {
     margin-right: 21px;
@@ -2172,6 +2164,13 @@ body {
 }
 
 
+@media (max-width: 1156px) {
+    .help:after,
+    .help:before {
+        right: 0;
+    }
+}
+
 @media (max-width:992px) {
     .container {
         width: 720px;
@@ -2214,6 +2213,8 @@ body {
         font-size: 16px;
     }
 
+    
+
     .poposal-wrapper_slider__area-btn {
         margin-top: 10px;
     }
@@ -2250,7 +2251,7 @@ body {
     }
 
     .form-input_border {
-        padding: 4px 0px 6px 14px;
+        padding: 4px 0px 3px 14px;
     }
 
     .plaza-span {
@@ -2439,6 +2440,18 @@ body {
         font-size: 16px;
     }
 
+    .poposal-wrapper_slider__next {
+        right: 60px;
+    }
+
+    .arrow-slider__next {
+        right: 20px !important;
+    }
+
+    .arrow-feedback-mr {
+        left: 50px;
+    }
+
     /*      one item page       */
 
     .photo-galery {
@@ -2455,6 +2468,7 @@ body {
 
     .galery_about-num__txt:not(:last-child) {
         margin-right: 15px;
+        
     }
 
     .cost {
@@ -2535,6 +2549,10 @@ body {
     .cal_text__titile {
         margin-bottom: 30px;
         font-size: 23px;
+    }
+
+    .price-span {
+        margin-right: 0;
     }
 
     .poposal-wrapper_slider__area-about {
@@ -2701,6 +2719,123 @@ body {
         width: 280px;
     }
 
+    .category-all img {
+        width: 200px;
+    }
+
+    .category-img {
+        flex-basis: 30%;
+    }
+
+    .places-padding {
+        padding-bottom: 88px;
+    }
+
+    .warehous-padding {
+        padding-bottom: 91px;
+    }
+    
+    .help {
+        padding-bottom: 80px;
+    }
+
+    .section-help_search__form-input {
+        padding-bottom: 10px;
+    }
+
+    .category {
+        padding-bottom: 80px;
+    }
+
+    .quality-items {
+        flex-direction: inherit;
+        align-items: normal;
+        justify-content: space-between;
+    }
+
+    .quality-items_wrapper {
+        width: 265px;
+        flex-basis: 30%;
+        margin-right: 0;
+    }
+
+    .quality-items_wrapper__difficulties {
+        margin-bottom: 110px;
+    }
+
+    .quality-items_wrapper__paper {
+        margin-left: 0;
+    }
+
+    .quality-items_wrapper__pay {
+        margin-top: -330px;
+    }
+
+    .quality-items_wrapper__people {
+        margin-top: -210px;
+    }
+
+    .quality-items_wrapper__text {
+        width: 230px;
+    }
+
+    .img_width {
+        width: 260px;
+    }
+
+    .quality-items_wrapper__paper img {
+        width: 200px;
+    }
+
+    .quality-items_wrapper__car img {
+        width: 230px;
+    }
+
+    .quality-items_wrapper__people img{
+        width: 250px;
+    }
+
+    .quality-expert {
+        margin-bottom: 0;
+        padding: 10px 0 10px 30px;
+    }
+
+    .quality-expert_img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .quality-expert_text {
+        position: relative;
+    }
+
+    .call {
+        margin-top: -90px;
+    }
+
+    .client-section {
+        padding-bottom: 200px;
+    }
+
+    .footer {
+        padding-top: 50px;
+    }
+
+    .information {
+        margin: 0;
+        flex-basis: 40%;
+        width: 250px;
+        margin-right: 30px;
+    }
+
+    .information_contacts__item {
+        margin: 0;
+        flex-basis: 40%;
+        width: 250px;
+    }
     /*      one item page       */
 
     .photo-galery {
@@ -2855,12 +2990,12 @@ body {
         padding: 5px 8px 15px 8px;
     }
 
-    .category-all:nth-child(odd) {
-        margin-right: 1px;
+    .category-img {
+        flex-basis: 35%;
     }
 
-    .category-img__flex {
-        justify-content: space-between;
+    .category-all:nth-child(odd) {
+        margin-right: 1px;
     }
 
     .category-all {
@@ -2970,9 +3105,7 @@ body {
         height: 250px;
     }
 
-    .quality-items_wrapper__people {
-        display: none;
-    }
+    
 
     .quality-expert_img {
         width: 320px;
@@ -3064,10 +3197,6 @@ body {
         display: none;
     }
 
-    .call_img-sm {
-
-    }
-
     .call {
         margin-top: -210px;
     }
@@ -3132,10 +3261,6 @@ body {
         font-size: 14px;
     }
 
-    .information_contacts__item-photo {
-        
-    }
-
     .information_contacts__item-photo:nth-child(odd) {
         margin-right: 5px;
     }
@@ -3148,7 +3273,6 @@ body {
     .information_contacts {
         order: 1;
     }
-
 
     .footer-taxi_title {
         font-size: 20px;
@@ -3291,6 +3415,122 @@ body {
         margin: 10px 0 1px 0;
     } 
 }
+
+@media (max-width:380px) {
+    .category-all img {
+        width: 100%;
+    }
+
+    .quality-items {
+        flex-direction: column;
+    }
+
+    .quality-items_wrapper__text {
+        width: 100%;
+    }
+
+    .quality-items_wrapper__fast img {
+        margin-bottom: -80px;
+        width: 100%;
+    }
+
+    .quality-items_wrapper__paper img {
+        margin-bottom: -96px;
+        width: 100%;
+    }
+
+    .quality-items_wrapper__difficulties img {
+        margin-bottom: -25px;
+        width: 100%;
+    }
+
+    .quality-items_wrapper__car img {
+        width: 100%;
+        margin-bottom: -30px;
+    }
+
+    .quality-items_wrapper__people img {
+        
+        margin-bottom: -140px;
+        width: 100%;
+    }
+
+    .quality-items_wrapper__people {
+        order: 4;
+    }
+
+    .quality-items_wrapper__fast {
+        order: 1;
+        width: 100%;
+    }
+
+    .quality-items_wrapper__difficulties {
+        order: 2;
+
+    }
+
+    .quality-items_wrapper__paper {
+        order: 3;
+
+    }
+
+    .quality-items_wrapper__car {
+        order: 5;
+        
+    }
+
+    .quality-items_wrapper__pay {
+        order: 6;
+        padding-bottom: 126px;
+
+    }
+
+    .quality-expert_img__mob {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+
+    .quality-expert_text {
+        position: relative;
+        padding: 10px 0 0 10px;
+    }
+
+    .quality-expert {
+        padding: 0;
+    }
+
+    .quality-expert_text__btn {
+        margin-left: 0;
+    }
+
+    .journal-news_item:not(:first-child) {
+        display: none;
+    }
+
+    .journal-news_item__title {
+        font-weight: 600;
+        font-size: 24px;
+        color: #fff;
+        width: 268px;
+        margin-bottom: 10px;
+    }
+
+    .journal-nwes_item__txt {
+        font-size: 18px;
+        color: #FFFFFF;
+        width: 290px;
+    }
+
+    .money-color {
+        color: #242423; 
+    }
+}
+
+
+
+
 
 /* POPUP */
 
