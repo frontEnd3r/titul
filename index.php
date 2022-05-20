@@ -277,8 +277,7 @@ get_header();
                 </div>
             </div>
             <div class="quality-expert">
-                <img class="quality-expert_img__mob" src="<?php echo get_template_directory_uri() ?>/assets/img/expert-mob.png" alt="expert">
-                <img class="quality-expert_img" src="<?php echo get_template_directory_uri() ?>/assets/img/expert.png"
+                <img class="quality-expert_img" src="<?php echo get_template_directory_uri() ?>/assets/img/expert-question.png"
                      alt="expert">
                 <div class="quality-expert_text">
                     <div class="quality-expert_text__title">Задайте вопрос эксперту</div>
