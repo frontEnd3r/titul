@@ -858,6 +858,7 @@ svg {
 }
 
 .poposal-slide__about {
+    width: 90%;
     font-weight: 400;
     font-size: 18px;
     color: #FFFFFF;
@@ -3672,6 +3673,55 @@ body {
         width: 100%;
     }
 
+    .poposal-slide__txt {
+        font-size: 24px;
+    }
+
+    .poposal-slide__about {
+        font-size: 12px;
+    }
+
+    .help {
+        padding-bottom: 0;  
+    }
+
+    .proposal {
+        padding-bottom: 45px;
+    }
+
+    .quality-section {
+        padding-top: 50px;
+    }
+
+    .poposal-arrow_next {
+        width: 25px;
+        height: 25px;
+    }
+
+    .poposal-arrow_prev {
+        width: 25px;
+        height: 25px;
+    }
+
+    .feedback_prev {
+        width: 25px;
+        height: 25px;
+    }
+
+    .feedback_next {
+        width: 25px;
+        height: 25px;
+    }
+
+    .feedback-person_offer__txt {
+        font-size: 16px;
+        width: 250px;
+    }
+
+    .feedback-person_offer {
+        width: 300px;
+    }
+
     .call {
         margin-top: -200px;
     }
@@ -3972,11 +4022,41 @@ body {
 
   .poposal-slide img {
     display: block;
-    width: 300px;
+    width: 100%;
     height: 100%;
+    top: 0;
     object-fit: cover;
   }
 
   .poposal-slide__img {
-      width: 300px;
+      width: 100%;
+  }
+
+  .poposal-arrow_next {
+    position: absolute;
+    right: 29px;
+  }
+
+  .poposal-arrow_prev {
+      position: absolute;
+      left: -8px;
+  }
+
+  .poposal-swiper {
+      position: relative;
+  }
+
+  .poposal-wrapper_slider {
+      border-radius: 10px;
+      overflow: hidden;
+  }
+
+  .feedback_next {
+      position: absolute;
+      right: 20px;
+  }
+
+  .feedback_prev {
+      position: absolute;
+      left: -10px;
   }

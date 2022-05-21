@@ -123,7 +123,7 @@ get_header();
             <div class="proposal-wrapper">
                 <div class="poposal-wrapper_slider">
                     <div class="swiper mySwiper poposal-swiper">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper ">
                             <div class="swiper-slide poposal-slide">
                                 <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
                                 <span class="poposal-slide__text">
@@ -179,8 +179,17 @@ get_header();
                                 </span>
                             </div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next">
+                        <button type="button" class="poposal-wrapper_slider__next  slider-arrow poposal-arrow_next">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/next.png" alt="next">
+                        </button>
+                        </div>
+                        <div class="swiper-button-prev">
+                        <button type="button" id="btn-prev"
+                            class="prev-brn poposal-wrapper_slider__prev arrow-feedback-mr slider-arrow poposal-arrow_prev">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
+                        </button>
+                        </div>
                         <div class="swiper-pagination"></div>
                     </div>
 
@@ -277,7 +286,7 @@ get_header();
         <div class="container">
             <h2 class="feedback_title">Отзывы скажут больше</h2>
             <h2 class="feedback_title_mob">Отзывы</h2>
-            <div class="swiper mySwiper feedback-mySwiper feedback-swiper">
+            <div class="swiper  feedback-swiper">
                 <div class="swiper-wrapper feedback-wrapper-swiper">
                     <div class="swiper-slide swiper-slide-feedback">
                         <div class="feedback-person_offer ">
@@ -384,13 +393,13 @@ get_header();
 
                 </div>
                 <div class="swiper-button-next">
-                    <button type="button" class="poposal-wrapper_slider__next  slider-arrow">
+                    <button id="btn-next" type="button" class="poposal-wrapper_slider__next  slider-arrow feedback_next">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/next.png" alt="next">
                     </button>
                 </div>
                 <div class="swiper-button-prev">
                     <button type="button" id="btn-prev"
-                            class="prev-brn poposal-wrapper_slider__prev arrow-feedback-mr slider-arrow">
+                            class="prev-brn poposal-wrapper_slider__prev arrow-feedback-mr slider-arrow feedback_prev">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
                     </button>
                 </div>
