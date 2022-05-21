@@ -8,19 +8,18 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 //CRB REG
 
-add_action('after_setup_theme', 'crb_load');
-function crb_load()
-{
-	require_once('inc/carbon-fields/vendor/autoload.php');
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+	require_once( 'inc/carbon-fields/vendor/autoload.php' );
 	\Carbon_Fields\Carbon_Fields::boot();
 }
 
-add_action('carbon_fields_register_fields', 'ast_register_custom_fields');
-function ast_register_custom_fields()
-{
-	require_once('inc/custom-fields-options/theme-options.php');
-	require_once('inc/custom-fields-options/index-options.php');
-	require_once('inc/custom-fields-options/single-object-options.php');
+add_action( 'carbon_fields_register_fields', 'ast_register_custom_fields' );
+function ast_register_custom_fields() {
+	require_once( 'inc/custom-fields-options/theme-options.php' );
+	require_once( 'inc/custom-fields-options/index-options.php' );
+	require_once( 'inc/custom-fields-options/single-object-options.php' );
+	require_once( 'inc/custom-fields-options/term-options.php' );
 }
 
 /**
@@ -56,42 +55,73 @@ function titul_setup() {
 	);
 
 }
+
 add_action( 'after_setup_theme', 'titul_setup' );
 
 
 function titul_scripts() {
 	wp_enqueue_style( 'main.css', get_template_directory_uri() . '/assets/css/main.css' );
-	wp_enqueue_style( 'fonts.googleapis',  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' );
+	wp_enqueue_style( 'fonts.googleapis', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' );
 	wp_enqueue_style( 'swiper-bundle.min.css', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
-	wp_enqueue_style( 'family=Inter',  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' );
-	
-	
-	
+	wp_enqueue_style( 'family=Inter', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' );
+
+
 	//wp_style_add_data( 'titul-style', 'rtl', 'replace' );
 
 	// wp_enqueue_style( 'unpkg.com', 'https://unpkg.com/swiper/swiper-bundle.min.js',  true );
-	wp_enqueue_script('swiper-bundle.min.js', 'https://unpkg.com/swiper/swiper-bundle.min.js', false, null, true);
+	wp_enqueue_script( 'swiper-bundle.min.js', 'https://unpkg.com/swiper/swiper-bundle.min.js', false, null, true );
 	wp_enqueue_script( 'app.js', get_template_directory_uri() . '/assets/js/app.js', false, null, true );
 	wp_enqueue_script( 'search.js', get_template_directory_uri() . '/assets/js/search.js', false, null, true );
-	wp_enqueue_script( 'slider-swiper.js', get_template_directory_uri() . '/assets/js/slider-swiper.js', false, null, true );
-	
+
 
 }
+
 add_action( 'wp_enqueue_scripts', 'titul_scripts' );
 
-
+add_action( 'init', 'register_post_types' );
+function register_post_types() {
+	register_post_type( 'property', [
+		'label'         => null,
+		'labels'        => [
+			'name'               => 'Объекты недвижимости',
+			'singular_name'      => 'Объект',
+			'add_new'            => 'Добавить объект недвижимости',
+			'add_new_item'       => 'Добавление объекта недвижимости',
+			'edit_item'          => 'Редактирование объекта недвижимости',
+			'new_item'           => 'Новый объект',
+			'view_item'          => 'Смотреть объект',
+			'search_items'       => 'Искать объект',
+			'not_found'          => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено в корзине',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Объекты',
+		],
+		'description'   => '',
+		'public'        => true,
+		'show_in_menu'  => null,
+		'show_in_rest'  => null,
+		'rest_base'     => null,
+		'menu_position' => null,
+		'menu_icon'     => 'dashicons-building',
+		'hierarchical'  => false,
+		'supports'      => [ 'title', 'thumbnail', 'excerpt', 'page-attributes' ],
+		'taxonomies'    => [ 'category' ],
+		'has_archive'   => false,
+		'rewrite'       => true,
+		'query_var'     => true,
+	] );
+}
 
 
 //CUSTOM MENU FUNCTIONS
 
-function get_child_menu_items($menu_array, $parent_id)
-{
+function get_child_menu_items( $menu_array, $parent_id ) {
 	$child_menus = [];
 
-	if (!empty($menu_array && is_array($menu_array))) {
-		foreach ($menu_array as $menu) {
-			if (intval($menu->menu_item_parent) === $parent_id) {
-				array_push($child_menus, $menu);
+	if ( ! empty( $menu_array && is_array( $menu_array ) ) ) {
+		foreach ( $menu_array as $menu ) {
+			if ( intval( $menu->menu_item_parent ) === $parent_id ) {
+				array_push( $child_menus, $menu );
 			}
 		}
 	}

@@ -14,21 +14,18 @@ if ( ! empty( $_GET['category'] ) ) {
 
 if ( ! empty( $_GET['category'] ) ) {
 	$price = $_GET['price'];
-} else {
-	$price = 0;
+	$price = (int) $price;
 }
 
 if ( ! empty( $_GET['square'] ) ) {
 	$square = $_GET['square'];
-} else {
-	$square = 0;
 }
 ?>
 
     <section class="search-category">
         <div class="container">
 			<?php get_search_form(); ?>
-            <div class="sorting">
+            <div class="sorting" style="display: none;">
                 <span class="sorting-title">Сортировать:</span>
                 <div class="sorting-items">
                     <span class="sorting-items_txt">по цене</span>
@@ -40,45 +37,12 @@ if ( ! empty( $_GET['square'] ) ) {
                     <li>не придумал</li>
                 </ul>
             </div>
-            <div class="card-items__flex">
+            <div class="card-items__flex" style="padding-top: 100px">
 
 				<?php
-				if ( ! empty( $price ) && empty( $square ) ) {
+				if ( ! empty( $square ) ) {
 					$args = [
-						'post_type'     => 'post',
-						'cat'           => $category,
-						'post_per_page' => - 1,
-						'meta_query'    => array(
-							array(
-								'key'     => 'property-price',
-								'type'    => 'numeric',
-								'value'   => $price,
-								'compare' => '<',
-							),
-						),
-					];
-				} else if ( ! empty( $price ) && ! empty( $square ) ) {
-					$args = [
-						'post_type'     => 'post',
-						'cat'           => $category,
-						'post_per_page' => - 1,
-						'meta_query'    => array(
-							array(
-								'key'     => 'property-price',
-								'type'    => 'numeric',
-								'value'   => $price,
-								'compare' => '<',
-							),
-							array(
-								'key'     => 'property-square',
-								'value'   => $square,
-								'compare' => '<',
-							),
-						),
-					];
-				} else if ( empty( $price ) && ! empty( $square ) ) {
-					$args = [
-						'post_type'     => 'post',
+						'post_type'     => 'property',
 						'cat'           => $category,
 						'post_per_page' => - 1,
 						'meta_query'    => array(
@@ -87,12 +51,13 @@ if ( ! empty( $_GET['square'] ) ) {
 								'key'     => 'property-square',
 								'value'   => $square,
 								'compare' => '<',
+								'type'    => 'NUMERIC',
 							),
 						),
 					];
 				} else {
 					$args = [
-						'post_type'     => 'post',
+						'post_type'     => 'property',
 						'cat'           => $category,
 						'post_per_page' => - 1,
 					];
@@ -100,41 +65,25 @@ if ( ! empty( $_GET['square'] ) ) {
 
 				$search_query = new WP_Query( $args );
 				if ( $search_query->have_posts() ) {
+					$counter = 0;
 					while ( $search_query->have_posts() ) :$search_query->the_post();
-
+						$current_prop_price = str_replace( " ", "", carbon_get_post_meta( $post->ID, 'property-price' ) );
+						$current_prop_price = (int) $current_prop_price;
+						if ( empty( $price ) ) {
+							get_template_part( 'template-parts/search-card' );
+							$counter += 1;
+						} else if ( ! empty( $price ) && $current_prop_price < $price ) {
+							get_template_part( 'template-parts/search-card' );
+							$counter += 1;
+						}
 						?>
-                        <div class="card-items">
-                            <div class="card-items-thumb">
-								<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
-                            </div>
-                            <div class="card-items_text">
-                                <h5 class="card-items_text__title"><?php echo $post->post_title; ?></h5>
-                                <p class="card-items_text__about"><?php echo the_excerpt(); ?></p>
-                            </div>
-                            <div class="card-items_about">
-								<?php
-								$obj_square  = carbon_get_post_meta( $post->ID, 'property-square' );
-								$obj_squares = carbon_get_post_meta( $post->ID, 'property-squares' );
-								$obj_price   = carbon_get_post_meta( $post->ID, 'property-price' );
-
-								if ( $obj_square ) {
-									echo '<div class="card-items_about__num"><span class="card-items_about__num-title">Площадь помещения (в м2): </span>' . $obj_square . '</div>';
-								}
-								if ( $obj_squares ) {
-									echo '<div class="card-items_about__num"><span class="card-items_about__num-title">Земля (в сотках): </span>' . $obj_squares . '</div>';
-								}
-								if ( $obj_price ) {
-									echo '<div class="card-items_about__num"><span class="card-items_about__num-title">Цена: </span>' . $obj_price . 'р</div>';
-								}
-								?>
-                            </div>
-                        </div>
-					<?php endwhile; ?>
-				<?php } else {
+					<?php endwhile;
+					if ( $counter === 0 ) {
+						echo 'Ничего не найдено';
+					}
+				} else {
 					echo 'Ничего не найдено';
 				} ?>
-
-
             </div>
         </div>
     </section>

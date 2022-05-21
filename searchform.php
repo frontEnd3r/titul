@@ -12,7 +12,6 @@ $categories = get_categories( [
 	'include'      => '',
 	'number'       => 0,
 	'pad_counts'   => false,
-	// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
 ] );
 
 
@@ -24,10 +23,10 @@ $categories = get_categories( [
         <span class="type-span input-dropdown input-span">Тип объекта</span>
         <!-- <input class="section-help_search__form-item " type="text" name="type"> -->
         <div class="dropdown">
-            <button class="dropbtn">Промышленно-строительные комплексы...</button>
+            <button class="dropbtn">Выберите категорию</button>
             <div class="dropdown-content">
 				<?php
-
+				echo '<a class="dropdown__item" href="#" data-category="8" >Все объекты</a>';
 				if ( $categories ) {
 					foreach ( $categories as $cat ) {
 						echo '<a class="dropdown__item" href="#" data-category="' . $cat->cat_ID . '" >' . $cat->name . '</a>';

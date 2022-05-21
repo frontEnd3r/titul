@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Карточка объекта
-Template Post Type: post
+Template Post Type: property
 */
 
 get_header();

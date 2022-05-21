@@ -1,4 +1,3 @@
-
 /*      SLIDER  FOR     FEEDBACK        */
 
 
@@ -8,57 +7,76 @@ let swiperFeedback = new Swiper(".feedback-swiper", {
     slidesPerGroup: 3,
     loop: true,
     loopFillGroupWithBlank: true,
-    
+
     breakpoints: {
-     2000: {
-       slidesPerView: 3,
-       spaceBetween: 10,
-       slidesPerGroup: 3
-     },
-     1200: {
-       slidesPerView: 3,
-       spaceBetween: 10,
-       slidesPerGroup: 3
-     },
-     992: {
-       slidesPerView: 2,
-       spaceBetween: 10,
-       slidesPerGroup: 2
-      },
-     576: {
-       slidesPerView: 1,
-       slidesPerGroup: 1,
-     },
-     380: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 0
-     }
+        2000: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            slidesPerGroup: 3
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            slidesPerGroup: 3
+        },
+        992: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            slidesPerGroup: 2
+        },
+        576: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+        },
+        380: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 0
+        }
     },
-    
- 
+
+
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-  });
+});
 
 
-  //  SLIDER FOR POPOSAL
+//  SLIDER FOR POPOSAL
 
 let swiperPoposal = new Swiper(".poposal-swiper", {
     cssMode: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     pagination: {
-      el: ".swiper-pagination",
+        el: ".swiper-pagination",
     },
-    
+
     mousewheel: true,
     keyboard: true,
-  });
+});
+
+//SLIDER IN SINGLE PROPERTY
+
+let swiperProperty1 = new Swiper(".galery-mySwiper", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+});
+let swiperProperty2 = new Swiper(".galery-mySwiper2", {
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+        swiper: swiperProperty1,
+    },
+});
 
 /*    TABS       */
 
@@ -68,23 +86,24 @@ let tabPanes = document.querySelectorAll(".journal-content");
 
 for (var i = 0; i < tabNavs.length; i++) {
 
-  tabNavs[i].addEventListener("click", function(e){
-    e.preventDefault();
-    var activeTabAttr = e.target.getAttribute("data-btn");
+    tabNavs[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        var activeTabAttr = e.target.getAttribute("data-btn");
 
-    for (var j = 0; j < tabNavs.length; j++) {
-      
-      var contentAttr = tabPanes[j].getAttribute("data-content");
+        for (var j = 0; j < tabNavs.length; j++) {
 
-      if (activeTabAttr === contentAttr) {
-        tabNavs[j].classList.add("active");
-        tabPanes[j].classList.add("active"); 
-      } else {
-        tabNavs[j].classList.remove("active");
-        tabPanes[j].classList.remove("active");
-      }
-    };
-  });
+            var contentAttr = tabPanes[j].getAttribute("data-content");
+
+            if (activeTabAttr === contentAttr) {
+                tabNavs[j].classList.add("active");
+                tabPanes[j].classList.add("active");
+            } else {
+                tabNavs[j].classList.remove("active");
+                tabPanes[j].classList.remove("active");
+            }
+        }
+        ;
+    });
 }
 
 
@@ -164,20 +183,27 @@ const btnOpen3 = document.getElementById('taxi-txt_btn');
 const modal = document.getElementById('wrapper-modal');
 const overlay = document.getElementById('overlay');
 
-btnOpen.addEventListener('click', () => {
-  modal.classList.add('active');
-});
+if (btnOpen) {
+    btnOpen.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+}
 
-btnOpen2.addEventListener('click', () => {
-  modal.classList.add('active');
-});
+if (btnOpen2) {
+    btnOpen2.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+}
 
-btnOpen3.addEventListener('click', () => {
-  modal.classList.add('active');
-});
+if (btnOpen3) {
+    btnOpen3.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+}
+
 
 const closeModal = () => {
-  modal.classList.remove('active');
+    modal.classList.remove('active');
 }
 
 overlay.addEventListener('click', closeModal);

@@ -8,7 +8,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 Container::make( 'post_meta', "Заполнение информации об объекте " )
-         ->where( 'post_template', '=', 'single-article.php' )
+         ->where( 'post_type', '=', 'property' )
          ->add_tab( ( 'Основная информация' ), [
 
 	         Field::make( 'media_gallery', 'property-gallery' )
@@ -26,7 +26,7 @@ Container::make( 'post_meta', "Заполнение информации об о
 	              ->set_width( 33 ),
 	         Field::make( 'text', 'property-price', 'Цена' )
 	              ->set_width( 33 ),
-	         Field::make( 'text', 'property-phone', 'Телефон владельца' )
+	         Field::make( 'text', 'property-phone', 'Телефон ответственного' )
 	              ->set_width( 33 ),
 	         Field::make( 'text', 'property-owner', 'Имя контакта' )
 	              ->set_width( 33 ),

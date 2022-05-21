@@ -12,7 +12,8 @@ get_header();
                 </p>
                 <div class="section-help_title__btn-consultant">
                     <button type="button"
-                            class="section-help_title_btn offer_btn__order-call btn-main" id="section-help_title_btn">Проконсультироваться с
+                            class="section-help_title_btn offer_btn__order-call btn-main" id="section-help_title_btn">
+                        Проконсультироваться с
                         экспертом
                     </button>
                     <div class="section-help_title__consultant">
@@ -33,7 +34,7 @@ get_header();
                     <h3 class="section-help_search__title">
                         Поиск
                     </h3>
-	                <?php get_search_form(); ?>
+					<?php get_search_form(); ?>
                 </div>
             </div>
         </div>
@@ -43,75 +44,47 @@ get_header();
         <div class="container">
             <p class="category-title">
                 Выберите интересующую категорию или
-                <a href="#" class="category-title_search">воспользуйтесь поиском</a>
+                <a href="<?php echo site_url(); ?>/search" class="category-title_search">воспользуйтесь поиском</a>
             </p>
             <div class="category-img__flex">
-                <a href="#" class="category-img">
-                    <div class="category-img_factory category-all">
-                        <img class="category-img_factory-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/factory.png" alt="factory">
-                        <p class="category-img_factory-text  categoty-text">Промышленно-строительные <span
-                                    class="categoty-span">комплексы, заводы и базы</span></p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_places category-all">
-                        <img class="category-img_places-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/places.png" alt="places">
-                        <p class="category-img_places-text categoty-text places-padding">Промышленные площадки</p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_warehouse category-all">
-                        <img class="category-img_warehouse-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/warehouse.png" alt="warehouse">
-                        <p class="category-img_warehouse-text categoty-text">Производственно-складские <span
-                                    class="categoty-span">помещения</span></p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_factory category-all">
-                        <img class="category-img_factory-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/quarry.png" alt="factory">
-                        <p class="category-img_factory-text  categoty-text category-margin">Карьеры и месторождения</p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_places category-all">
-                        <img class="category-img_places-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/ferm.png" alt="places">
-                        <p class="category-img_places-text categoty-text ">Сельхоз-предприятия и фермы</p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_warehouse category-all">
-                        <img class="category-img_warehouse-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/office.png" alt="warehouse">
-                        <p class="category-img_warehouse-text categoty-text category-margin warehous-padding">Торгово-офисные помещения
-                        </p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_factory category-all">
-                        <img class="category-img_factory-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/working.png" alt="factory">
-                        <p class="category-img_factory-text  categoty-text category-margin">Действующие предприятия</p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_places category-all">
-                        <img class="category-img_places-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/earthPlaces.png" alt="places">
-                        <p class="category-img_places-text categoty-text">Земельные участки</p>
-                    </div>
-                </a>
-                <a href="#" class="category-img">
-                    <div class="category-img_warehouse category-all">
-                        <img class="category-img_warehouse-img"
-                             src="<?php echo get_template_directory_uri() ?>/assets/img/rest.png" alt="warehouse">
-                        <p class="category-img_warehouse-text categoty-text category-margin">Базы отдыха и лечения</p>
-                    </div>
-                </a>
+
+				<?php
+
+				$categories = get_categories( [
+					'taxonomy'     => 'category',
+					'type'         => 'post',
+					'child_of'     => 8,
+					'parent'       => '',
+					'orderby'      => 'name',
+					'order'        => 'ASC',
+					'hide_empty'   => 1,
+					'hierarchical' => 1,
+					'exclude'      => '',
+					'include'      => '',
+					'number'       => 0,
+					'pad_counts'   => false,
+				] );
+
+				if ( $categories ) {
+					foreach ( $categories as $cat ) {
+//						echo '<pre>';
+//						print_r( $cat );
+//						echo '</pre>'; ?>
+
+                        <a href="<?php echo get_category_link($cat->term_id); ?> " class="category-img">
+                            <div class="category-img_factory category-all">
+                                <img class="category-img_factory-img"
+                                     src="<?php echo wp_get_attachment_url(carbon_get_term_meta( $cat->term_id, 'term_thumb' )) ; ?>"
+                                     alt="factory">
+                                <p class="category-img_factory-text  categoty-text"><?php echo $cat->name ?></p>
+                            </div>
+                        </a>
+					<?php }
+				}
+
+				?>
+
+
             </div>
 
         </div>
@@ -125,7 +98,9 @@ get_header();
                     <div class="swiper mySwiper poposal-swiper">
                         <div class="swiper-wrapper ">
                             <div class="swiper-slide poposal-slide">
-                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <img class="poposal-slide__img"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png"
+                                     alt="slide">
                                 <span class="poposal-slide__text">
                                     <h4 class="poposal-slide_title">Земельный участок</h4>
                                     <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
@@ -134,7 +109,9 @@ get_header();
                                 </span>
                             </div>
                             <div class="swiper-slide poposal-slide">
-                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <img class="poposal-slide__img"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png"
+                                     alt="slide">
                                 <span class="poposal-slide__text">
                                     <h4 class="poposal-slide_title">Земельный участок</h4>
                                     <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
@@ -143,7 +120,9 @@ get_header();
                                 </span>
                             </div>
                             <div class="swiper-slide poposal-slide">
-                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <img class="poposal-slide__img"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png"
+                                     alt="slide">
                                 <span class="poposal-slide__text">
                                     <h4 class="poposal-slide_title">Земельный участок</h4>
                                     <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
@@ -152,7 +131,9 @@ get_header();
                                 </span>
                             </div>
                             <div class="swiper-slide poposal-slide">
-                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <img class="poposal-slide__img"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png"
+                                     alt="slide">
                                 <span class="poposal-slide__text">
                                     <h4 class="poposal-slide_title">Земельный участок</h4>
                                     <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
@@ -161,7 +142,9 @@ get_header();
                                 </span>
                             </div>
                             <div class="swiper-slide poposal-slide">
-                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <img class="poposal-slide__img"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png"
+                                     alt="slide">
                                 <span class="poposal-slide__text">
                                     <h4 class="poposal-slide_title">Земельный участок</h4>
                                     <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
@@ -170,7 +153,9 @@ get_header();
                                 </span>
                             </div>
                             <div class="swiper-slide poposal-slide">
-                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <img class="poposal-slide__img"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png"
+                                     alt="slide">
                                 <span class="poposal-slide__text">
                                     <h4 class="poposal-slide_title">Земельный участок</h4>
                                     <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
@@ -180,24 +165,22 @@ get_header();
                             </div>
                         </div>
                         <div class="swiper-button-next">
-                        <button type="button" class="poposal-wrapper_slider__next  slider-arrow poposal-arrow_next">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/next.png" alt="next">
-                        </button>
+                            <button type="button" class="poposal-wrapper_slider__next  slider-arrow poposal-arrow_next">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/next.png" alt="next">
+                            </button>
                         </div>
                         <div class="swiper-button-prev">
-                        <button type="button" id="btn-prev"
-                            class="prev-brn poposal-wrapper_slider__prev arrow-feedback-mr slider-arrow poposal-arrow_prev">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
-                        </button>
+                            <button type="button" id="btn-prev"
+                                    class="prev-brn poposal-wrapper_slider__prev arrow-feedback-mr slider-arrow poposal-arrow_prev">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
+                            </button>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
 
-                    
-
 
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -241,7 +224,7 @@ get_header();
                     <div class="quality-items_wrapper quality-items_wrapper__car">
                         <div class="quality-items_wrapper__title"
                         <span class="span-for-color">Отвезём</span>> на
-                        объекты 
+                        объекты
                     </div>
                     <div class="quality-items_wrapper__text">Выбрали какие объекты хотите посмотреть? Мы вас отвезём
                         и расскажем об объектах только правду.
@@ -269,13 +252,16 @@ get_header();
                 </div>
             </div>
             <div class="quality-expert">
-                <img class="quality-expert_img" src="<?php echo get_template_directory_uri() ?>/assets/img/expert-question.png"
+                <img class="quality-expert_img"
+                     src="<?php echo get_template_directory_uri() ?>/assets/img/expert-question.png"
                      alt="expert">
                 <div class="quality-expert_text">
                     <div class="quality-expert_text__title">Задайте вопрос эксперту</div>
                     <p class="quality-expert_text__txt">Эксперт ответит на ваши вопросы и поможет с продажей и
                         поиском коммерческой недвижимости.</p>
-                    <button id="quality-expert_text__btn"  type="button" class="quality-expert_text__btn">Заказать звонок</button>
+                    <button id="quality-expert_text__btn" type="button" class="quality-expert_text__btn">Заказать
+                        звонок
+                    </button>
                 </div>
             </div>
         </div>
@@ -393,7 +379,8 @@ get_header();
 
                 </div>
                 <div class="swiper-button-next">
-                    <button id="btn-next" type="button" class="poposal-wrapper_slider__next  slider-arrow feedback_next">
+                    <button id="btn-next" type="button"
+                            class="poposal-wrapper_slider__next  slider-arrow feedback_next">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/next.png" alt="next">
                     </button>
                 </div>
@@ -596,27 +583,30 @@ get_header();
     <div class="wrapper-modal" id="wrapper-modal">
         <div class="overlay" id="overlay"></div>
         <div class="modal-window-text" id="modal-window-text">
-          <div class="modal-txt">
-              <h4 class="modal__title">Заявка на консультацию с экспертом</h4>
-              <p class="modal__about">Напишите контакты, чтобы эксперт помог вам разместить объект или подобрать недвижимость.</p>
-          </div>
-          <div class="modal-form">
-              <div class="consultant_time">
-                  <img class="consultant_modal__img" src="<?php echo get_template_directory_uri() ?>/assets/img/online-consultant.png" alt="consultant">
-                  <p class="consultant__txt">Эксперты перезвонят в течении 15 минут.</p>
-              </div>
-              <div class="modal-form__item">
-                  <h5 class="form-quest">Как к вам обращаться?</h5>
-                  <input class="form_modal__input" type="text" placeholder="Виталий">
-                  <h5 class="form-quest">Куда звонить?</h5>
-                  <input class="form_modal__input" type="tel" placeholder="89005553535"> 
-                  <button type="button" class="section-help_search__btn modal__btn">Найти</button> 
-                  <button type="button" class="offer_btn__whatsapp btn-main modal__btn modal_btn_whats">
-                    Написать <span class="offer_btn__span"> в WhatsApp</span>
-                </button>
-              </div>
-          </div>
-        </div>        
-      </div> 
+            <div class="modal-txt">
+                <h4 class="modal__title">Заявка на консультацию с экспертом</h4>
+                <p class="modal__about">Напишите контакты, чтобы эксперт помог вам разместить объект или подобрать
+                    недвижимость.</p>
+            </div>
+            <div class="modal-form">
+                <div class="consultant_time">
+                    <img class="consultant_modal__img"
+                         src="<?php echo get_template_directory_uri() ?>/assets/img/online-consultant.png"
+                         alt="consultant">
+                    <p class="consultant__txt">Эксперты перезвонят в течении 15 минут.</p>
+                </div>
+                <div class="modal-form__item">
+                    <h5 class="form-quest">Как к вам обращаться?</h5>
+                    <input class="form_modal__input" type="text" placeholder="Виталий">
+                    <h5 class="form-quest">Куда звонить?</h5>
+                    <input class="form_modal__input" type="tel" placeholder="89005553535">
+                    <button type="button" class="section-help_search__btn modal__btn">Найти</button>
+                    <button type="button" class="offer_btn__whatsapp btn-main modal__btn modal_btn_whats">
+                        Написать <span class="offer_btn__span"> в WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
 get_footer();
