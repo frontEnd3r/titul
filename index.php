@@ -122,84 +122,67 @@ get_header();
             <h2 class="proposal_title">Специальные предложения</h2>
             <div class="proposal-wrapper">
                 <div class="poposal-wrapper_slider">
-                    
                     <div class="swiper mySwiper poposal-swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                            <span class="poposal-wrapper_slider__area active">
-                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
-                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
-                                <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
-                                    небольшого предприятия.</p>
-                                <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
-                            </span>
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
-                                <span class="poposal-wrapper_slider__area active">
-                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
-                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
-                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
-                                        небольшого предприятия.</p>
-                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                            <div class="swiper-slide poposal-slide">
+                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <span class="poposal-slide__text">
+                                    <h4 class="poposal-slide_title">Земельный участок</h4>
+                                    <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-slide__about">Подойдёт для постройки дома, фермы или небольшого предприятия.</p>
+                                    <button class="poposal-slide__btn" type="button">Посмотреть</button>
                                 </span>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
-                                <span class="poposal-wrapper_slider__area active">
-                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
-                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
-                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
-                                        небольшого предприятия.</p>
-                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                            <div class="swiper-slide poposal-slide">
+                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <span class="poposal-slide__text">
+                                    <h4 class="poposal-slide_title">Земельный участок</h4>
+                                    <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-slide__about">Подойдёт для постройки дома, фермы или небольшого предприятия.</p>
+                                    <button class="poposal-slide__btn" type="button">Посмотреть</button>
                                 </span>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
-                                <span class="poposal-wrapper_slider__area active">
-                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
-                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
-                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
-                                        небольшого предприятия.</p>
-                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                            <div class="swiper-slide poposal-slide">
+                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <span class="poposal-slide__text">
+                                    <h4 class="poposal-slide_title">Земельный участок</h4>
+                                    <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-slide__about">Подойдёт для постройки дома, фермы или небольшого предприятия.</p>
+                                    <button class="poposal-slide__btn" type="button">Посмотреть</button>
                                 </span>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
-                                <span class="poposal-wrapper_slider__area active">
-                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
-                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
-                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
-                                        небольшого предприятия.</p>
-                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                            <div class="swiper-slide poposal-slide">
+                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <span class="poposal-slide__text">
+                                    <h4 class="poposal-slide_title">Земельный участок</h4>
+                                    <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-slide__about">Подойдёт для постройки дома, фермы или небольшого предприятия.</p>
+                                    <button class="poposal-slide__btn" type="button">Посмотреть</button>
                                 </span>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="poposal-wrapper_slider__slide" src="<?php echo get_template_directory_uri() ?>/assets/img/slider-1.png" alt="slider">
-                                <span class="poposal-wrapper_slider__area active">
-                                <span class="poposal-wrapper_slider__area-title">Земельный участок</span>
-                                <span class="poposal-wrapper_slider__area-txt">300 га, 5.5 млн. руб</span>
-                                    <p class="poposal-wrapper_slider__area-about">Подойдёт для постройки дома, фермы или
-                                        небольшого предприятия.</p>
-                                    <button type="button" class="poposal-wrapper_slider__area-btn">Посмотреть</button>
+                            <div class="swiper-slide poposal-slide">
+                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <span class="poposal-slide__text">
+                                    <h4 class="poposal-slide_title">Земельный участок</h4>
+                                    <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-slide__about">Подойдёт для постройки дома, фермы или небольшого предприятия.</p>
+                                    <button class="poposal-slide__btn" type="button">Посмотреть</button>
+                                </span>
+                            </div>
+                            <div class="swiper-slide poposal-slide">
+                                <img class="poposal-slide__img" src="<?php echo get_template_directory_uri() ?>/assets/img/poposal-slide.png" alt="slide">
+                                <span class="poposal-slide__text">
+                                    <h4 class="poposal-slide_title">Земельный участок</h4>
+                                    <span class="poposal-slide__txt">300 га, 5.5 млн. руб</span>
+                                    <p class="poposal-slide__about">Подойдёт для постройки дома, фермы или небольшого предприятия.</p>
+                                    <button class="poposal-slide__btn" type="button">Посмотреть</button>
                                 </span>
                             </div>
                         </div>
-                        <div class="swiper-button-next">
-                        <button type="button" id="btn-next" class="poposal-wrapper_slider__next slider-arrow">
-                        <svg width="12" height="25" viewBox="0 0 12 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 24L10 12.5L1 0.999998" stroke="white" stroke-width="2"/>
-                        </svg>
-                    </button>
-                        </div>
-                        <div class="swiper-button-prev">
-                        <button type="button" id="btn-prev" class="poposal-wrapper_slider__prev slider-arrow">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/prev.png" alt="prev">
-                    </button>
-                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
                     </div>
-
 
                     
 
@@ -249,7 +232,7 @@ get_header();
                     <div class="quality-items_wrapper quality-items_wrapper__car">
                         <div class="quality-items_wrapper__title"
                         <span class="span-for-color">Отвезём</span>> на
-                        объекты
+                        объекты 
                     </div>
                     <div class="quality-items_wrapper__text">Выбрали какие объекты хотите посмотреть? Мы вас отвезём
                         и расскажем об объектах только правду.
@@ -435,8 +418,7 @@ get_header();
     <section class="journal" id="journal">
         <div class="container">
             <div class="call">
-            <img class="call_img-sm" src="<?php echo get_template_directory_uri() ?>/assets/img/call-sm.png" alt="call">
-                <img class="call_img" src="<?php echo get_template_directory_uri() ?>/assets/img/call(2).png"
+                <img class="call_img" src="<?php echo get_template_directory_uri() ?>/assets/img/call-expert.png"
                      alt="expert">
                 <div class="call_text">
                     <h4 class="cal_text__titile">Закажите звонок

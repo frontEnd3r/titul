@@ -18,21 +18,21 @@
                     <div class="information_contacts">
                         <div class="information_contacts__item">
                             <h5 class="information_contacts__item-title">Контакты</h5>
-                            <div class="information_contacts__item-flex">
+                            <div class="information_contacts__item-flex information_contacts__item-footer">
                                 <img class="information_contacts__item-img" src="<?php echo get_template_directory_uri()?>/assets/img/phone.svg" alt="phone">
                                 <p class="information_contacts__item-txt">+7 (929) 032-33-33</p>
                             </div>
                         </div>
                         <div class="information_contacts__item">
-                            <div class="information_contacts__item-flex">
+                            <div class="information_contacts__item-flex information_contacts__item-footer">
                                 <img class="information_contacts__item-img" src="<?php echo get_template_directory_uri()?>/assets/img/mail.svg" alt="phone">
                                 <p class="information_contacts__item-txt">info@titul40.ru</p>
                             </div>
                         </div>
                         <div class="information_contacts__item"></div>
-                        <div class="information_contacts__item-flex">
+                        <div class="information_contacts__item-flex information_contacts__item-footer">
                             <img class="information_contacts__item-img" src="<?php echo get_template_directory_uri()?>/assets/img/map.svg" alt="phone">
-                            <p class="information_contacts__item-txt">Пермь, ул. Куйбышева,
+                            <p class="information_contacts__item-txt information_contacts__item__width">Пермь, ул. Куйбышева,
                                 50, оф. 804
                                 <span class="information_contacts__item-txt_span">Ост. Стадион "Динамо"</span>
                             </p>
@@ -48,13 +48,13 @@
                     </div>
                 </div>
 
-                <div class="information_contacts__item">
+                <div class="information_contacts__item information_contacts__block">
                     <h5 class="information_contacts__item-title">Приезжайте к нам </h5>
                     <div class="information_contacts__item-flex information_photo">
                         <img class="information_contacts__item-photo" src="<?php echo get_template_directory_uri()?>/assets/img/footer-2.png" alt="phone">
                         <img class="information_contacts__item-photo" src="<?php echo get_template_directory_uri()?>/assets/img/footer-1.png" alt="">
                         <img class="information_contacts__item-photo" src="<?php echo get_template_directory_uri()?>/assets/img/footer-3.png" alt="">
-                        <img src="<?php echo get_template_directory_uri()?>/assets/img/footer-4.png" alt="">
+                        <img class="information_contacts__item-photo" src="<?php echo get_template_directory_uri()?>/assets/img/footer-4.png" alt="">
                     </div>
                 </div>
 
@@ -70,8 +70,7 @@
             </div>
 
             <div class="taxi">
-            <img class="taxi-img-mob" src="<?php echo get_template_directory_uri()?>/assets/img/taxi-mob.png" alt="">
-                <img class="taxi-img" src="<?php echo get_template_directory_uri()?>/assets/img/footer-car.png" alt="taxi">
+                <img class="taxi-img" src="<?php echo get_template_directory_uri()?>/assets/img/taxi.png" alt="taxi">
                 <div class="taxi-txt">
                     <h5 class="footer-taxi_title">
                         Вызовите такси <span class="footer-taxi_title">до офиса</span>

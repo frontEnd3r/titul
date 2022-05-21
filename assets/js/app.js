@@ -92,8 +92,11 @@ let swiper = new Swiper(".mySwiper", {
 
   //  SLIDER FOR POPOSAL
 
-var swiperPoposal = new Swiper(".poposal-swiper", {
-    // cssMode: true,
+let swiperPoposal = new Swiper(".poposal-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    cssMode: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -101,9 +104,9 @@ var swiperPoposal = new Swiper(".poposal-swiper", {
     pagination: {
       el: ".swiper-pagination",
     },
-    loop: false
-    // mousewheel: true,
-    // keyboard: true,
+    
+    mousewheel: true,
+    keyboard: true,
   });
 
 /*    TABS       */
