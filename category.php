@@ -11,6 +11,11 @@ get_header();
 
     <section class="search-category">
         <div class="container">
+	        <?php
+	        if ( function_exists('yoast_breadcrumb') ) {
+		        yoast_breadcrumb( '<ul class="nav-one-item" id="breadcrumbs">','</ul>' );
+	        }
+	        ?>
 			<?php get_search_form(); ?>
             <div class="sorting" style="display: none;">
                 <span class="sorting-title">Сортировать:</span>

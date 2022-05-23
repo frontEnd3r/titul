@@ -28,11 +28,13 @@ $post_info  = [
 </script>
 <section class="photo">
     <div class="container">
-        <ul class="nav-one-item">
-            <li class="nav-one-item_link"><a href="#">Главная ·</a></li>
-            <li class="nav-one-item_link"><a href="#">Земельные участки ·</a></li>
-            <li class="nav-one-item_link"><a href="#">Производственная база</a></li>
-        </ul>
+
+
+	    <?php
+	    if ( function_exists('yoast_breadcrumb') ) {
+		    yoast_breadcrumb( '<ul class="nav-one-item" id="breadcrumbs">','</ul>' );
+	    }
+	    ?>
 
         <div class="flex-for-section">
             <div class="photo-galery">
