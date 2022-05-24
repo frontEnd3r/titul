@@ -315,6 +315,12 @@ option:focus {
 }
 
 
+.offer_logo__img img{
+    width: 80px;
+    height: 80px;
+}
+
+
 .offer_btn__whatsapp:after {
     content: " ";
     display: block;
@@ -388,17 +394,20 @@ option:focus {
 
 /*          NAVIGATION          */
 
+
 .nav {
+    top: 0;
     display: flex;
     margin-top: 47px;
     padding-bottom: 28px;
     justify-content: space-between;
-}
+} 
 
 .nav_links {
     color: #242423;
     font-size: 24px;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .nav_links:hover {
@@ -476,6 +485,7 @@ option:focus {
 .section-help_title__h1 {
     font-size: 48px;
     margin-bottom: 30px;
+    line-height: 58px;
 }
 
 .section-help_title__commercial:after {
@@ -498,6 +508,7 @@ option:focus {
 
 .section-help_title__search {
     font-size: 24px;
+    line-height: 125%;
 }
 
 .section-help_title__p {
@@ -563,6 +574,34 @@ option:focus {
 
 .input-dropdown {
     width: 410px;
+    
+}
+
+/* .dropdown {
+    padding-right: 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 27px;
+    width: 100%;
+}
+
+.dropdown__item:nth-child(1) {
+    margin-top: 8px;
+}
+
+.dropbtn:after {
+    content: "";
+    width: 22px;
+    height: 8px;
+    display: block;
+    background: url('../img/arrow-down.png') no-repeat;
 }
 
 .input-span {
@@ -574,7 +613,7 @@ option:focus {
 .section-help_search__form-input {
     background-color: #fff;
     width: 100%;
-    padding: 7px 0px 13px 28px;
+    padding: 7px 0px 14px 28px;
     display: flex;
     flex-direction: column;
     border: 1px solid #CFDBD5;
@@ -583,6 +622,7 @@ option:focus {
 
 .form-input_border {
     border-radius: 10px 0px 0px 10px;
+    padding: 7px 0 18px 28px;
 }
 
 .price-span {
@@ -707,6 +747,14 @@ option:focus {
     flex-wrap: wrap;
 }
 
+.category-img {
+    width: 354px;
+}
+
+.category-img img {
+    width: 100%;
+}
+
 .categoty-span {
     display: block;
 }
@@ -782,8 +830,8 @@ option:focus {
 }
 
 .slider-arrow:hover {
-    background: #fff;
-    border: 1px solid #F2603B;
+    background: #FC9E84;
+    border: 1px solid #FC9E84;
 }
 
 
@@ -978,6 +1026,7 @@ svg {
 }
 
 .quality-items_wrapper__title {
+    margin-bottom: 20px;
     color: #fff;
     font-size: 24px;
 }
@@ -995,6 +1044,7 @@ svg {
 
 .quality-items_wrapper__text {
     color: #fff;
+    line-height: 122%;
     margin-bottom: 40px;
     width: 313px;
 }
@@ -2010,8 +2060,9 @@ body {
 
 /* Контейнер <div> - необходим для размещения выпадающего содержимого */
 .dropdown {
+   
     position: relative;
-    display: inline-block;
+    
 }
 
 /* Выпадающее содержимое (скрыто по умолчанию) */
@@ -2022,14 +2073,15 @@ body {
     width: 438px;
     z-index: 1;
     margin-left: -28px;
-    padding-left: 28px;
+    padding-left: 24px;
     border-radius: 10px;
+   
 }
 
 /* Ссылки внутри выпадающего списка */
 .dropdown-content a {
     color: black;
-
+    font-size: 14px;
     text-decoration: none;
     display: block;
 }
@@ -2051,6 +2103,7 @@ body {
 /* Показать выпадающее меню при наведении курсора */
 .dropdown:hover .dropdown-content {
     display: block;
+    
 }
 
 
@@ -2297,6 +2350,10 @@ body {
         margin: 0 auto;
     }
 
+    .section-help_title__h1 {
+        line-height: 29px;
+    }
+
     .offer {
         display: none;
     }
@@ -2316,6 +2373,7 @@ body {
     }
 
     .nav_links {
+        cursor: pointer;
         font-size: 20px;
     }
 
@@ -3860,6 +3918,17 @@ body {
     }
 }
 
+
+@media (max-width: 360px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+}
 
 /* POPUP */
 

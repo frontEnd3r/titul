@@ -32,6 +32,21 @@ let swiperFeedback = new Swiper(".feedback-swiper", {
             slidesPerView: 1,
             slidesPerGroup: 1,
             spaceBetween: 0
+        },
+        370: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 0
+        },
+        350: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 0
+        },
+        340: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 0
         }
     },
 
@@ -207,3 +222,5 @@ const closeModal = () => {
 }
 
 overlay.addEventListener('click', closeModal);
+
+

@@ -35,10 +35,9 @@
                     <div class="information_contacts__item-flex information_contacts__item-footer">
                         <img class="information_contacts__item-img"
                              src="<?php echo get_template_directory_uri() ?>/assets/img/map.svg" alt="phone">
-                        <p class="information_contacts__item-txt information_contacts__item__width">Пермь, ул.
-                            Куйбышева,
-                            50, оф. 804
-                            <span class="information_contacts__item-txt_span">Ост. Стадион "Динамо"</span>
+                        <p class="information_contacts__item-txt information_contacts__item__width">
+                        Калуга, ул. Гагарина, 1, оф. 702
+                            <!-- <span class="information_contacts__item-txt_span">Ост. Стадион "Динамо"</span> -->
                         </p>
                     </div>
                 </div>
@@ -93,7 +92,7 @@
         </div>
         <div class="politics">
             <span class="politics_txt politics-span">Калуга 2021-2022 © Все права защищены</span>
-            <a href="#" class="politics_txt politics_underline">Политика конфединциальности</a>
+            <a href="#" class="politics_txt politics_underline">Политика конфиденциальности</a>
         </div>
     </div>
 </footer>

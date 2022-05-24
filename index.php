@@ -222,9 +222,9 @@ get_header();
                              src="<?php echo get_template_directory_uri() ?>/assets/img/paper.png" alt="man-run">
                     </div>
                     <div class="quality-items_wrapper quality-items_wrapper__car">
-                        <div class="quality-items_wrapper__title"
-                        <span class="span-for-color">Отвезём</span>> на
-                        объекты
+                        <div class="quality-items_wrapper__title">
+                        
+                        <span class="span-for-color">Отвезём</span> на объекты
                     </div>
                     <div class="quality-items_wrapper__text">Выбрали какие объекты хотите посмотреть? Мы вас отвезём
                         и расскажем об объектах только правду.
