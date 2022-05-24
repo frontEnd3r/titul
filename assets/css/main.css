@@ -2832,9 +2832,7 @@ body {
         margin-bottom: 1px;
     }
 
-    .cal_text__txt {
-        display: none;
-    }
+   
 
     .quality-expert_text__txt {
         font-size: 14px;
@@ -3290,9 +3288,7 @@ body {
         padding: 5px 8px 15px 8px;
     }
 
-    /* .category-img {
-        flex-basis: 35%;
-    } */
+ 
     .category-all:nth-child(odd) {
         margin-right: 1px;
     }
@@ -3311,60 +3307,6 @@ body {
         display: none;
     }
 
-    /* .poposal-wrapper_slider__next {
-        height: 25px;
-        width: 25px;
-    }
-
-    .poposal-wrapper_slider__prev {
-        height: 25px;
-        width: 25px;
-    }
-
-    .poposal-wrapper_slider__prev img {
-        width: 6px;
-        height: 11px;
-    }
-
-    .poposal-wrapper_slider__next img {
-        width: 6px;
-        height: 11px;
-    }
-
-    .poposal-wrapper_slider__slide {
-        display: none;
-    }
-
-    .dots-for-slider {
-        display: none;
-    }
-
-    .poposal-wrapper_slider__area-title {
-        font-size: 24px;
-    }
-
-    .poposal-wrapper_slider__area-txt {
-        font-size: 24px;
-    }
-
-    .poposal-wrapper_slider__area-about {
-        font-size: 12px;
-        width: 226px;
-        margin-bottom: 45px;
-    }
-
-    .poposal-wrapper_slider__area-btn {
-        width: 300px;
-        background: #fff;
-        color: #242423;
-        padding: 15px 0 15px 0;
-        margin: 0;
-        font-size: 14px;
-    }
-
-    .poposal-wrapper_slider__area.active {
-        left: 10px;
-    } */
     .quality_title {
         font-size: 24px;
     }
@@ -3647,6 +3589,10 @@ body {
         width: 100%;
     }
 
+    .call_text {
+        padding-top: 12px;
+    }
+
     .quality-items_wrapper__text {
         width: 100%;
     }
@@ -3771,6 +3717,10 @@ body {
     .category-all img {
         width: 100%;
     }
+    
+    .cal_text__titile {
+        margin-bottom: 10px;
+    }
 
     .section-help_title__h1 {
         font-size: 24px;
@@ -3845,9 +3795,9 @@ body {
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 64.84%, rgba(0, 0, 0, 0) 108.75%);
     }
 
-    .call_text button {
-        width: 90%;
-    }
+  .quality-expert_text__btn {
+      padding: 11px ;
+  }
 
     .taxi-txt {
         padding: 10px 0 10px 10px;
