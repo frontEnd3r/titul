@@ -224,3 +224,17 @@ const closeModal = () => {
 overlay.addEventListener('click', closeModal);
 
 
+ /*   SLIDER  FOR   HEADER    */
+
+ let swiperHeader = new Swiper(".links-mobile", {
+    slidesPerView: 1,
+    spaceBetween: 5,
+    slidesPerGroup: 1,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    
+    navigation: {
+      nextEl: ".header-next",
+      prevEl: ".header-prev",
+    },
+  })

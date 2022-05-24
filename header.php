@@ -112,6 +112,27 @@
 				endforeach; ?>
 			<?php endif; ?>
         </div>
+        <div class="swiper links-mobile">
+                <div class="swiper-wrapper swiper-wrapper-header">
+                  <div class="swiper-slide link-item">Промышленно-строительные комплексы, заводы и базы</div>
+                  <div class="swiper-slide link-item">Промышленные площадки</div>
+                  <div class="swiper-slide link-item">Действующие предприятия</div>
+                  <div class="swiper-slide link-item">Сельхоз-предприятия и фермы</div>
+                  <div class="swiper-slide link-item">Земельные участки</div>
+                  <div class="swiper-slide link-item">Производственно-складские помещения</div>
+                  <div class="swiper-slide link-item">Торгово-офисные помещения</div>
+                  <div class="swiper-slide link-item">Базы отдыха и лечения</div>
+                </div>
+                <div class="swiper-arrow">
+                    <div class="btn-header header-prev">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header-prev.png" alt="arrow">
+                    </div>
+                    <div class="btn-header header-next">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header-next.png" alt="arrow">
+                    </div>
+                    
+                </div>
+        </div>
     </div>
 </header>
 <main class="main">

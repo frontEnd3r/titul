@@ -171,14 +171,32 @@ option:focus {
 }
 
 .links-mobile {
+    width: auto;
     position: relative;
 }
 
 .header-prev {
     position: absolute;
     top: 30%;
-    transform: translateY(-50%);
+    z-index: 9999;
+    /* transform: translateY(-50%); */
+    left: 0;
+}
+
+.swiper-wrapper-header {
+    width: 250px !important;
+}
+
+.header-next {
+    position: absolute;
     right: 0;
+    top: 30%;
+    z-index: 9999;
+}
+
+.link-item {
+    height: 44px !important;
+    width: 190px !important;
 }
 
 .swiper-button-next:after,
@@ -2187,6 +2205,10 @@ body {
         margin: 0 auto;
     }
 
+    .form-input_border {
+        padding: 7px 0 20px 28px;
+    }
+
     .offer-links {
         display: none;
     }
@@ -2351,7 +2373,11 @@ body {
     }
 
     .section-help_title__h1 {
-        line-height: 29px;
+        line-height: 45px;
+    }
+
+    .type-span {
+        margin-bottom: 8px;
     }
 
     .offer {
@@ -2370,6 +2396,7 @@ body {
     .section-help_title__commercial:after {
         margin-left: 173px;
         width: 327px;
+        margin-top: -14px;
     }
 
     .nav_links {
@@ -2433,7 +2460,11 @@ body {
     }
 
     .form-input_border {
-        padding: 4px 0px 3px 14px;
+        padding: 4px 0px 19px 14px;
+    }
+
+    .plaza-span_img {
+        margin-bottom: 4px;
     }
 
     .plaza-span {
@@ -2445,7 +2476,7 @@ body {
     }
 
     .section-help_search__btn {
-        padding: 23px 47px;
+        padding: 22px 47px;
     }
 
     .category-img__flex {
@@ -2471,7 +2502,7 @@ body {
     }
 
     .quality-items_wrapper__paper {
-        margin-top: -270px;
+        margin-top: -267px;
         margin-left: 0px;
         margin-bottom: 110px;
     }
@@ -2483,7 +2514,7 @@ body {
 
     .quality-items_wrapper__car {
         margin-bottom: 235px;
-        margin-top: -172px;
+        margin-top: -170px;
     }
 
     .quality-items_wrapper__pay {
@@ -2491,6 +2522,11 @@ body {
         margin-top: -298px;
 
 
+    }
+
+    
+    .categoty-text {
+        line-height: 18px;
     }
 
     .quality-items_wrapper__people {
@@ -2703,6 +2739,10 @@ body {
 @media (max-width: 768px) {
     .container {
         width: 540px;
+    }
+
+    .categoty-text {
+        line-height: 15px;
     }
 
     .call_text {
@@ -2955,10 +2995,15 @@ body {
 
     .quality-items_wrapper__paper {
         margin-left: 0;
+        overflow: hidden;
+    }
+
+    .quality-item_txt-margin {
+        margin-bottom: 15px;
     }
 
     .quality-items_wrapper__pay {
-        margin-top: -330px;
+        margin-top: -370px;
     }
 
     .quality-items_wrapper__people {
@@ -3725,6 +3770,11 @@ body {
 @media (max-width: 380px) {
     .category-all img {
         width: 100%;
+    }
+
+    .section-help_title__h1 {
+        font-size: 24px;
+        line-height: 29px
     }
 
     .poposal-slide__txt {

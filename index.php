@@ -215,7 +215,7 @@ get_header();
                         <div class="quality-items_wrapper__title">Берём <span class="span-for-color">бумаги </span>на
                             себя
                         </div>
-                        <div class="quality-items_wrapper__text">Никому не нравится возиться с тонной бумаг, поэтому
+                        <div class="quality-items_wrapper__text quality-item_txt-margin">Никому не нравится возиться с тонной бумаг, поэтому
                             сбор и подачу документов берём на себя
                         </div>
                         <img class="quality-items_wrapper__img"
